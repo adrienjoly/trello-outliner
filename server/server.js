@@ -4,12 +4,12 @@ const compression = require('compression');
 const cors = require('cors');
 const rp = require('request-promise');
 const mustacheExpress = require('mustache-express');
-const exec = require('child_process').exec;
+//const exec = require('child_process').exec;
 
 if (!process.env.APP_KEY) {
   console.error('WARNING: don\'t forget to set the APP_KEY environment variable, for Trello API.');
 }
-
+/*
 if (!process.env.GITHUB_WEBHOOK_SECRET) {
   console.error('WARNING: don\'t forget to set the GITHUB_WEBHOOK_SECRET environment variable, for synchronising the source code of this Glitch with Github.');
 }
@@ -30,13 +30,13 @@ github.on('push', function (event, repo, ref, data) {
     }
   });
 });
-
+*/
 Promise = require('bluebird');
 
 // init web server
 let app = express();
 app.use(bodyParser.json());
-app.use(github);
+//app.use(github);
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // register mustache as express' main view rendered
